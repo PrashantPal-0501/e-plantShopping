@@ -8,7 +8,7 @@ function App() {
   // Controls which "page" is visible: landing | products | cart
   const [view, setView] = useState('landing');
 
-  const goToProducts = () => setView('products');
+  const handleGetStartedClick = () => setView('products');
   const goToCart = () => setView('cart');
   const goToLanding = () => setView('landing');
 
@@ -20,7 +20,7 @@ function App() {
             <p className="tagline">Where Green Meets Serenity</p>
             <h1 className="company-name">Paradise Nursery</h1>
             <AboutUs />
-            <button className="get-started-btn" onClick={goToProducts}>
+            <button className="get-started-btn" onClick={handleGetStartedClick}>
               Get Started
             </button>
           </div>
@@ -32,7 +32,7 @@ function App() {
       )}
 
       {view === 'cart' && (
-        <CartItem onContinueShopping={goToProducts} onHomeClick={goToLanding} />
+        <CartItem onContinueShopping={handleGetStartedClick} onHomeClick={goToLanding} />
       )}
     </div>
   );
